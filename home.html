@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Salary Program</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f2f5;
+        margin: 0;
+        padding: 20px;
+      }
+      h2 {
+        text-align: center;
+        color: #333;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      th, td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+      th {
+        background-color: #4caf50;
+        color: white;
+      }
+      tr:hover {
+        background-color: #f1f1f1;
+      }
+      .main {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      .new-employee, .updtemp {
+        background-color: #fff;
+        padding: 20px;
+        margin: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        flex: 1;
+        max-width: 45%;
+        min-width: 300px;
+      }
+      .new-employee {
+        background-color: #e0f7fa; /* Changed color for New Employee card */
+      }
+      input[type="text"] {
+        width: calc(100% - 22px);
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+      button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        background-color: #4caf50;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      .logout-button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+    </style>
+    <script>
+      function openUpdateForm(employeeId, employeeName, employeePost, employeeSalary) {
+        document.getElementById("updateEmployeeId").value = employeeId;
+        document.getElementById("updateEmployeeName").value = employeeName;
+        document.getElementById("updateEmployeePost").value = employeePost;
+        document.getElementById("updateEmployeeSalary").value = employeeSalary;
+        document.getElementById("updtemp").style.display = "block";
+        window.scrollTo(0, document.body.scrollHeight);
+      }
+
+      function logout() {
+        window.location.href = 'http://localhost:4000/index';  // Redirect to index.html on logout
+      }
+    </script>
+  </head>
+
+  <body>
+    <!-- Logout Button at the Top Right -->
+    <div class="logout-button">
+      <button onclick="logout()">Logout</button>
+    </div>
+
+    <h2>Employee Salary Program</h2>
+
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Salary Program</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f2f5;
+        margin: 0;
+        padding: 20px;
+      }
+      h2 {
+        text-align: center;
+        color: #333;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      th, td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+      th {
+        background-color: #4caf50;
+        color: white;
+      }
+      tr:hover {
+        background-color: #f1f1f1;
+      }
+      .main {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      .new-employee, .updtemp {
+        background-color: #fff;
+        padding: 20px;
+        margin: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        flex: 1;
+        max-width: 45%;
+        min-width: 300px;
+      }
+      .new-employee {
+        background-color: #e0f7fa; /* Changed color for New Employee card */
+      }
+      input[type="text"] {
+        width: calc(100% - 22px);
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+      button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        background-color: #4caf50;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      .logout-button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+    </style>
+    <script>
+      function openUpdateForm(employeeId, employeeName, employeePost, employeeSalary) {
+        document.getElementById("updateEmployeeId").value = employeeId;
+        document.getElementById("updateEmployeeName").value = employeeName;
+        document.getElementById("updateEmployeePost").value = employeePost;
+        document.getElementById("updateEmployeeSalary").value = employeeSalary;
+        document.getElementById("updtemp").style.display = "block";
+        window.scrollTo(0, document.body.scrollHeight);
+      }
+
+      function logout() {
+        window.location.href = 'http://localhost:4000';  // Redirect to index.html on logout
+      }
+    </script>
+  </head>
+
+  <body>
+    <!-- Logout Button at the Top Right -->
+    <div class="logout-button">
+      <button onclick="logout()">Logout</button>
+    </div>
+
+
+
+    <table>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Post</th>
+          <th>Salary</th>
+          <th>Actions</th>
+        </tr>
+        <!-- Dummy Data -->
+        <tr>
+          <td>1</td>
+          <td>John Doe</td>
+          <td>Software Engineer</td>
+          <td>$70,000</td>
+          <td>
+            <form action="/delete" method="post" style="display:inline;">
+              <input type="hidden" name="employeeId" value="1" />
+              <button type="submit">Delete</button>
+            </form>
+            <button 
+              type="button" 
+              onclick="openUpdateForm('1', 'John Doe', 'Software Engineer', '$70,000')">
+              Update
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Jane Smith</td>
+          <td>Project Manager</td>
+          <td>$85,000</td>
+          <td>
+            <form action="/delete" method="post" style="display:inline;">
+              <input type="hidden" name="employeeId" value="2" />
+              <button type="submit">Delete</button>
+            </form>
+            <button 
+              type="button" 
+              onclick="openUpdateForm('2', 'Jane Smith', 'Project Manager', '$85,000')">
+              Update
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Michael Brown</td>
+          <td>HR Specialist</td>
+          <td>$60,000</td>
+          <td>
+            <form action="/delete" method="post" style="display:inline;">
+              <input type="hidden" name="employeeId" value="3" />
+              <button type="submit">Delete</button>
+            </form>
+            <button 
+              type="button" 
+              onclick="openUpdateForm('3', 'Michael Brown', 'HR Specialist', '$60,000')">
+              Update
+            </button>
+          </td>
+        </tr>
+      </table>
+      
+
+    <div class="main">
+      <div class="new-employee">
+        <h2>New Employee</h2>
+        <form action="/add" method="post">
+          <input type="text" placeholder="Employee Name" name="employeeName" />
+          <input type="text" placeholder="Employee Post" name="employeePost" />
+          <input type="text" placeholder="Employee Salary" name="employeeSalary" />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      
+      <div class="updtemp" id="updtemp" style="display:none;">
+        <h2>Update Employee</h2>
+        <form action="/update" method="post">
+          <input type="text" placeholder="Employee Id" name="employeeId" id="updateEmployeeId" readonly />
+          <input type="text" placeholder="Employee Name" name="employeeName" id="updateEmployeeName" />
+          <input type="text" placeholder="Employee Post" name="employeePost" id="updateEmployeePost" />
+          <input type="text" placeholder="Employee Salary" name="employeeSalary" id="updateEmployeeSalary" />
+          <button type="submit">Update</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+
+  </body>
+</html>
